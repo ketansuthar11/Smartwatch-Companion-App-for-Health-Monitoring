@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "600776526054",
+    "project_id": "smartwatchdatatracker",
+    "storage_bucket": "smartwatchdatatracker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600776526054:android:7f8996b264838f41c71327",
+        "android_client_info": {
+          "package_name": "com.example.watch_data_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7dpyYEgJUB--JCCBRIzWUCGKgjcsJvW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
