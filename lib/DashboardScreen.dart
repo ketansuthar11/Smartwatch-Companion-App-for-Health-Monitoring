@@ -25,7 +25,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
       String today = DateTime.now().toIso8601String().split('T')[0];
 
       try {
-        // Reference to the Firestore collection
         final docRef = FirebaseFirestore.instance
             .collection('WatchUsersDB')
             .doc(userId)
@@ -135,7 +134,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   'Welcome, $userName',
                   style: Theme.of(context).textTheme.titleSmall
               ),
-              Text('${user?.email ?? 'Not Logged In'}',
+              Text(user?.email ?? 'Not Logged In',
                   style: Theme.of(context).textTheme.titleSmall
               ),
               const SizedBox(height: 40),

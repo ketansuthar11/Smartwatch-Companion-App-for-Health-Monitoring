@@ -33,15 +33,14 @@ class _SignupscreenState extends State<Signupscreen> {
 
         try {
           await firestore.collection('WatchUsersDB').doc(user.uid).set({
-            'name': username.text, // Ensure this is a valid string
-            'email': user.email, // Ensure email is not null
+            'name': username.text,
+            'email': user.email,
             'uid': user.uid,
             'createdAt': FieldValue.serverTimestamp(),
           });
 
           print("Data added successfully");
 
-          // If successful, navigate to the next screen
           Get.offAll(Wrapper());
         } catch (e) {
           print("Error storing data in Firestore: $e");

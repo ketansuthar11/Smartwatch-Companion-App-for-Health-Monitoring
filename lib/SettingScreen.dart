@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'BluetoothProvider.dart';
@@ -8,7 +9,7 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  CustomBluetoothService bluetoothService = CustomBluetoothService();  // Renamed class
+  CustomBluetoothService bluetoothService = CustomBluetoothService();
   bool isScanningEnabled = false;
   List<ScanResult> devicesList = [];
 
@@ -48,6 +49,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ListTile(
               title: Text('Enable Bluetooth Scanning'),
               trailing: Switch(
+                activeColor: Colors.blue,
+                inactiveThumbColor: Colors.grey,
                 value: isScanningEnabled,
                 onChanged: toggleBluetoothScan,
               ),
@@ -68,7 +71,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     title: Text(device.device.name.isNotEmpty ? device.device.name : "Unnamed Device"),
                     subtitle: Text('RSSI: ${device.rssi}'),
                     onTap: () {
-                      // Handle device tap
+
                     },
                   );
                 },
@@ -77,6 +80,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+          onPressed: signOut,
+        child: Icon(Icons.login_rounded,color: Colors.white,),
+      ),
     );
+  }
+  signOut(){
+    FirebaseAuth.instance.signOut();
   }
 }

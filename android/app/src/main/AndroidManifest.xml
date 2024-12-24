@@ -11,7 +11,7 @@
 
 
     <application
-        android:label="watch_data_app"
+        android:label="Watch Data"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
