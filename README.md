@@ -1,4 +1,5 @@
-# watch_data_app
+# Smartwatch-Companion-App-for-Health-Monitoring
+
 
 A new Flutter project.
 
